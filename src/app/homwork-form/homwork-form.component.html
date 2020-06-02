@@ -1,0 +1,45 @@
+
+<div class="col-xs-12 col-6">
+  <h2>Nueva Tarea</h2>
+  <form class="" [formGroup]="tareasForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="title">Título tarea: </label>
+      <input type="text" name="title"
+      formControlName="title"
+      class="form-control" id="title"
+      aria-describedby="title" >
+    </div>
+
+    <div class="form-group">
+      <label for="signatures" class="mr-4">Asignatura :</label>
+      <mat-form-field name="signatures" class="mt-2">
+        <mat-label>Escoge un asignatura</mat-label>
+        <mat-select formControlName="study">
+          <mat-option *ngFor="let s of estudies.studies" [value]="s.value"
+            class="select-item-view">
+            {{s.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+    </div>
+
+
+    <div class="form-group">
+      <label for="signatures" class="mr-4">Fecha de entrega :</label>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Escoge la fecha de entrega</mat-label>
+        <input matInput [matDatepicker]="picker"
+        formControlName="finalDate">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker [dateClass]="dateClass" #picker></mat-datepicker>
+      </mat-form-field>
+
+    </div>
+
+
+
+      <button class="btn btn-lg btn-primary" type="submit" [disabled]="!tareasForm.valid">Aceptar</button>
+  </form>
+</div>

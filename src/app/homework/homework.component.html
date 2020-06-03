@@ -1,0 +1,42 @@
+
+
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+      {{tarea.title}}
+      </mat-panel-title>
+      <mat-panel-description>{{tarea.category}}
+
+
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <mat-panel-description>
+      <mat-label>Fecha entrega</mat-label>
+      <mat-label>{{tarea.deliverDate}}</mat-label>
+
+    </mat-panel-description>
+
+    <mat-panel-description>
+      <mat-label>Fecha Final </mat-label>
+      <mat-label>{{tarea.finalDate}} </mat-label>
+
+    </mat-panel-description>
+  </mat-expansion-panel>
+  <!--
+
+    <mat-expansion-panel (opened)="panelOpenState = true"
+    (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Self aware panel
+      </mat-panel-title>
+      <mat-panel-description>
+        Currently I am {{panelOpenState ? 'open' : 'closed'}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>I'm visible because I am open</p>
+  </mat-expansion-panel>
+-->
+</mat-accordion>
